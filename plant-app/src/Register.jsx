@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from "axios";
 
 export const Register = (props) => {
 
@@ -7,28 +8,33 @@ export const Register = (props) => {
     const [pass, setPass ] = useState('');
     const [name, setName] = useState('');
 
-    const handleSubmit = (e) => {
+    const register  = (e) => {
         e.preventDefault();
-        console.log(email);
-        console.log(pass)
+        axios.post('http://localhost:3000/register', {
+            email: email, 
+            password: pass,
+            first_name: name
+        }).then((response) => {
+            console.log(response);
+        });
+    };
 
-    }
     return (
         <div className="auth-form-container">
-            <form className="register-form"onSubmit={handleSubmit}>
+            <div className="register-form">
                 <label htmlFor="full-name">Full Name:</label>
-                <input type="name" placeholder="FullName" id="name" name="name"></input>
+                <input type="name" onChange={(e) => setName(e.target.value)}placeholder="FullName" id="name" name="name"></input>
                 
                 <label htmlFor="email">Email:</label>
-                <input type="email" placeholder="youremail@gmail.com" id="email" name="email" ></input>
+                <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="youremail@gmail.com" id="email" name="email" ></input>
                 
                 <label htmlFor="password">Password:</label>
-                <input type="password" placeholder="***********" id="password" name="password" ></input>
+                <input type="password" onChange={(e) => setPass(e.target.value)} placeholder="***********" id="password" name="password" ></input>
 
-                <button type="submit"> Sign-Up</button>
-            </form>
+                <button type="submit" onClick = {register}> Sign-Up</button>
+            </div>
     
-            <button className="link-btn" onClick={() => props.onFormSwitch('login')}> Have an Account? Sign in Here </button>
+            <button className="link-btn" onClick={() => {props.onFormSwitch('login')}}> Have an Account? Sign in Here </button>
         </div>
     )
 
