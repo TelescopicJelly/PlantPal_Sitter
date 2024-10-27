@@ -1,11 +1,6 @@
 // Used for wanting to store things
-import React, {useState} from "react";
+//import React, {useState} from "react";
 export const Home = (props) => {
-
-    // Stores the values of email and password the user types in
-    const [email, setEmail ] = useState('');
-    const [pass, setPass ] = useState('');
-
 
     
     return (

@@ -1,10 +1,11 @@
 const express = require("express");
-const mysql = require("mysql");
-//const cors = require('cors');
+const mysql = require("mysql2");
+const cors = require('cors');
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 //app.use(cors());
 const db = mysql.createConnection({
@@ -14,36 +15,52 @@ const db = mysql.createConnection({
     database: "userDB"
 });
 
+
 app.post('/register', (req, res) => {
-    //const email = req.body.email;
-    //const password =  req.body.password;
-    //const first_name = req.body.first_name;
+    const email = req.body.email;
+    const password =  req.body.password;
+    const first_name = req.body.first_name;
 
     db.query(
-        "INSERT INTO users (email, password, first_name) VALUES (?,?)", 
-        [email, password, first_name],
+        "INSERT INTO users (first_name, email, password) VALUES (?,?,?)", 
+        [first_name, email, password],
         (err, result) => {
-            console.log(err);
+            //console.log(err);
+            //console.log("Successful Registration");
+
+
+        if (result.length > 0) {
+            res.send(result);
+        } else {
+            res.send({message: "Information Saved Successfully"});
         }
-    );
+
+    });
 });
 
-/*app.post ('/users', (req, res) => {
-    const sql = "SELECT * FROM users WHERE username = ? AND password = ?";
-    /*const values = [
-        req.body.email,
-        req.body.password
-    ]
-    db.query(sql, [req.body.email, req.body.password], (err, data) => {
-        if(err) return res.json("Error");
-        if(data.length > 0) {
-            return res.json("Login Successfully")
+
+app.post('/login', (req, res) => {
+    const email = req.body.email;
+    const password =  req.body.password;
+
+    db.query(
+        "SELECT * FROM users WHERE email = ? AND password = ?", 
+        [email, password], 
+        (err, result) => {
+
+        if(err) {
+            res.send({err: err});
+        }
+
+        if (result.length > 0) {
+            res.send(result);
         } else {
-            return res.json("No Record")
+            res.send({message: "Wrong email/password combo"});
         }
         
-    })
-})*/
+    });
+});
+
 
 app.listen(3001, () => {
     console.log("Listening....");

@@ -1,40 +1,54 @@
+//import { response } from "express";
 import React, {useState} from "react";
-import axios from "axios";
+import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-export const Register = (props) => {
+export const Register = () => {
 
     // Stores the values of email and password the user types in
-    const [email, setEmail ] = useState('');
-    const [pass, setPass ] = useState('');
-    const [name, setName] = useState('');
+    const [emailReg, setEmailReg ] = useState('');
+    const [passReg, setPassReg ] = useState('');
+    const [nameReg, setNameReg] = useState('');
 
-    const register  = (e) => {
+    const [registerStatus, setRegisterStatus] = useState('');
+
+    const navigate = useNavigate();
+
+
+    const register = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/register', {
-            email: email, 
-            password: pass,
-            first_name: name
+        Axios.post('http://localhost:3001/register', {
+            email: emailReg,
+            password: passReg,
+            first_name: nameReg, 
         }).then((response) => {
-            console.log(response);
+            if (response.data.message) {
+                setRegisterStatus(response.data.message);
+            } 
+        }).catch(error => {
+            setRegisterStatus("An error occurred. Please try again.");
+            console.log("Login error:", error);
         });
     };
 
+
     return (
         <div className="auth-form-container">
-            <div className="register-form">
+            <form className="register-form" onSubmit={register}>
                 <label htmlFor="full-name">Full Name:</label>
-                <input type="name" onChange={(e) => setName(e.target.value)}placeholder="FullName" id="name" name="name"></input>
+                <input type="name" onChange={(e) => setNameReg(e.target.value)}placeholder="FullName" id="name" name="name"></input>
                 
                 <label htmlFor="email">Email:</label>
-                <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="youremail@gmail.com" id="email" name="email" ></input>
+                <input type="email" onChange={(e) => setEmailReg(e.target.value)} placeholder="youremail@gmail.com" id="email" name="email" ></input>
                 
                 <label htmlFor="password">Password:</label>
-                <input type="password" onChange={(e) => setPass(e.target.value)} placeholder="***********" id="password" name="password" ></input>
+                <input type="password" onChange={(e) => setPassReg(e.target.value)} placeholder="***********" id="password" name="password" ></input>
 
-                <button type="submit" onClick = {register}> Sign-Up</button>
-            </div>
+                <button type="submit"> Sign-Up</button>
+            </form>
     
-            <button className="link-btn" onClick={() => {props.onFormSwitch('login')}}> Have an Account? Sign in Here </button>
+            <button className="link-btn" onClick={() => navigate('/login')}> Have an Account? Sign in Here </button>
+            <h1>{registerStatus}</h1>
         </div>
     )
 
