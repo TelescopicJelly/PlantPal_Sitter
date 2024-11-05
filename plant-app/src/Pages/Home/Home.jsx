@@ -1,6 +1,22 @@
-// Used for wanting to store things
-//import React, {useState} from "react";
-export const Home = (props) => {
+import React from 'react'
+import "./Home.css"
+import Navbar from '../../Components/Navbar/Navbar'
+import Header from '../../Components/Header/Header'
+
+const Home = () => {
+  return (
+    <div>
+      
+      <Navbar/>
+      <Header/>
+    
+    </div>
+
+  )
+}
+
+export default Home
+/*export const Home = (props) => {
 
     
     return (
@@ -12,4 +28,4 @@ export const Home = (props) => {
         </div>
     )
 
-}
+}*/

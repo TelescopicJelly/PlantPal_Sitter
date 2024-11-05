@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
+import Logo from '../PlantPal_Sitter_Logo.png'
+//import Navbar from '../../Components/Navbar/Navbar'
+
 
 export const Login = () => {
     const [emailLog, setEmailLog] = useState('');
@@ -19,7 +23,7 @@ export const Login = () => {
                 setLoginStatus(response.data.message);
             } else {
                 setLoginStatus(`Welcome, ${response.data[0].email}!`);
-                navigate('/home'); // Redirect to Home on successful login
+                //navigate('/home'); // Redirect to Home on successful login
             }
         }).catch(error => {
             setLoginStatus("An error occurred. Please try again.");
@@ -27,19 +31,25 @@ export const Login = () => {
         });
     };
 
-    return (
+    return ( 
         <div className="auth-form-container">
+
             <form className="login-form" onSubmit={login}>
+                <img src={Logo} alt="logo" className='plant_logo' />
                 <label htmlFor="email">Email:</label>
                 <input value={emailLog} onChange={(e) => setEmailLog(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
 
                 <label htmlFor="password">Password:</label>
                 <input value={passLog} onChange={(e) => setPassLog(e.target.value)} type="password" placeholder="***********" id="password" name="password" />
 
-                <button type="submit">Login</button>
+                <button className="login-btn" type="submit">Login</button>
             </form>
             <button className="link-btn" onClick={() => navigate('/register')}> Don't Have an Account? Register Here </button>
             <h1>{loginStatus}</h1>
         </div>
     );
 };
+
+{/*<div>
+<Navbar/>
+</div>*/}

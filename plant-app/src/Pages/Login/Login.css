@@ -1,0 +1,60 @@
+.auth-form-container {
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    /*flex-direction: column;*/
+    background-image: linear-gradient(70deg,#37d5ab  , #425c5c 48%, #72f1a7);
+    
+  }
+
+.plant_logo {
+    width: 400px;
+    height: 400px;
+    padding-bottom: 1rem;
+}
+  
+  
+  .auth-form-container, .login-form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .login-form{
+    padding: 5rem;
+    border:  1px solid whitesmoke;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+  
+  label {
+    text-align: left;
+    padding: 0.50rem 0;
+    text-indent: -10px;
+  }
+  
+  input {
+    margin: 0.5rem 0;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .login-btn {
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 1.0rem 0;
+    cursor: pointer;
+  }
+  
+  .link-btn {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    font-weight: 900;
+  }

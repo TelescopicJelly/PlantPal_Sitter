@@ -2,6 +2,9 @@
 import React, {useState} from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Logo from "../PlantPal_Sitter_Logo.png"
+import "./Register.css"
+
 
 export const Register = () => {
 
@@ -35,6 +38,8 @@ export const Register = () => {
     return (
         <div className="auth-form-container">
             <form className="register-form" onSubmit={register}>
+                <img src={Logo} alt="logo" className='plant_logo' />
+
                 <label htmlFor="full-name">Full Name:</label>
                 <input type="name" onChange={(e) => setNameReg(e.target.value)}placeholder="FullName" id="name" name="name"></input>
                 
@@ -44,12 +49,12 @@ export const Register = () => {
                 <label htmlFor="password">Password:</label>
                 <input type="password" onChange={(e) => setPassReg(e.target.value)} placeholder="***********" id="password" name="password" ></input>
 
-                <button type="submit"> Sign-Up</button>
+                <button className="register-btn" type="submit"> Sign-Up</button>
             </form>
     
             <button className="link-btn" onClick={() => navigate('/login')}> Have an Account? Sign in Here </button>
             <h1>{registerStatus}</h1>
-        </div>
+        </div>    
     )
 
 }

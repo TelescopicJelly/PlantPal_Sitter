@@ -1,22 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import './App.css';
-import { Login } from './Login';
-import { Register } from './Register';
-import { Home } from './Home';
+//import './App.css';
+import { Login } from './Pages/Login/Login';
+import { Register } from './Pages/Register/Register';
+import  Home from './Pages/Home/Home';
+import { Booking } from './Pages/Booking/Booking';
+
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <img src="PlantPal_Sitter_Logo.png" alt="My Website Logo" />
+      {/*<img src={Logo} alt="My Website Logo" className='logo' />*/}
         
         <Routes>
           {/* Default route for "/" renders Login component */}
-          <Route path="/" element={<Navigate to="/login" />} />
+          {/*<Route path="/" element={<Navigate to="/login" />} />*/}
+          <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
     </Router>
