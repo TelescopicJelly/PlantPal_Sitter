@@ -3,7 +3,6 @@ import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import Logo from '../PlantPal_Sitter_Logo.png'
-//import Navbar from '../../Components/Navbar/Navbar'
 
 
 export const Login = () => {

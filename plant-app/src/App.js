@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 import  Home from './Pages/Home/Home';
-import { Booking } from './Pages/Booking/Booking';
+import Booking from './Pages/Booking/Booking';
+import Menu from './Pages/Menu/Sitter_Menu';
 
 
 function App() {
   return (
+ 
     <Router>
       <div className="App">
       {/*<img src={Logo} alt="My Website Logo" className='logo' />*/}
@@ -19,6 +21,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/sitter_menu" element={<Menu />} />
         </Routes>
       </div>
     </Router>

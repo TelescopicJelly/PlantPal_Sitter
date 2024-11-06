@@ -16,8 +16,11 @@
 
 }
 
-.logo {
-    font-weight: 500;
+.logo_name {
+    font-weight: 300;
+    font-size: 3.0em;
+    margin-left: 9cm;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navButton {
