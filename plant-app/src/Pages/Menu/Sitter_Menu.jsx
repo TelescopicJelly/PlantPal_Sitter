@@ -1,42 +1,41 @@
-
-//import { DateRange } from 'react-date-range';
-import React, { useState } from "react";
-import "./Sitter_Menu.css"
-//import 'react-date-range/dist/styles.css'; // main css file
-//import 'react-date-range/dist/theme/default.css'; // theme css file
-
-import { Calendar } from 'primereact/calendar';
-import "primereact/resources/themes/lara-dark-indigo/theme.css";
-import "primereact/resources/primereact.min.css";
-//import 
+import React, { useState } from 'react';
+import DateTimePicker from 'react-datetime-picker';
+import 'react-datetime-picker/dist/DateTimePicker.css';
+import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
+import './Sitter_Menu.css'
+import { useNavigate } from "react-router-dom";
+import Axios from "axios";
 
 const Sitter_Menu = () => {
-    const [date1, setDate1] = useState(null);
+  const [dateRange, setDateRange] = useState(new Date());
+
+  const navigate = useNavigate();
 
   return (
-    <div className='Sitter_Schedule' style={{ padding: "60px"}}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr", gap: "15px"}}>
-            <Calendar minDate={new Date()}/>
+    <div className='sitter-menu'>
+      <form className="booking-form">
+        <h2 className="form-title">Reserve Your Time</h2>
+        <label htmlFor="date-picker" className="form-label">
+          <b>What time do you want to reserve?</b>
+        </label>
+        <div className="form-input">
+          <DateTimePicker 
+            id="date-picker" 
+            onChange={setDateRange} 
+            value={dateRange} 
+            className="date-time-picker"
+          />
         </div>
+        <button type="submit" onClick={() => navigate('/payment_form')} className="request-btn">Request a Booking</button>
+      </form>
     </div>
-
+    
   );
 };
 
 export default Sitter_Menu;
 
-//import React from 'react'
 
-/*const Sitter_Menu = () => {
-
-    
-  return (
-    <div>
-    <Booking/>
-    </div>
-  )
-}
-
-export default Sitter_Menu*/
 
 

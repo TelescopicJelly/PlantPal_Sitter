@@ -1,20 +1,29 @@
-import './Navbar.css'
-import { useNavigate } from 'react-router-dom'
+import './Navbar.css';
+import { useNavigate } from 'react-router-dom';
+import Logo from "../../Copy of Blu’s Greenhouse.png";
+import Logo_name from "../../logo_name.png";
+// #425c5c;
 
 const Navbar = () => {
+    
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
-  return (
-    <div className="navbar">
-        <div className="navContainer">
-            <h1 className="logo_name">PlantPal-Sitter</h1>
-            <div className="navItems">
-                <button className="navButton" onClick={() => navigate('./register')}>Register</button>
-                <button className="navButton" onClick={() => navigate('./login')}>Login</button>
+
+    return (
+        <div className="navbar">
+            <div className="navContainer">
+                <img src={Logo_name} alt="logo" className='logo_name' />
+                <img src={Logo} alt="logo" className='plants_hanging' />
+                <img src={Logo} alt="logo" className='plants_hanging2'/>
+                <div className="navItems">
+                        <>
+                            <button className="navButton" onClick={() => navigate('./register')}>Register</button>
+                            <button className="navButton">Login</button>
+                        </>
+                </div>
             </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

@@ -20,14 +20,15 @@ app.post('/register', (req, res) => {
     const email = req.body.email;
     const password =  req.body.password;
     const first_name = req.body.first_name;
+    const sitter_checkbox = req.body.sitter_checkbox ? 1 : 0;
 
     db.query(
-        "INSERT INTO users (first_name, email, password) VALUES (?,?,?)", 
-        [first_name, email, password],
+        "INSERT INTO users (first_name, email, password, plant_sitter) VALUES (?,?,?,?)", 
+        [first_name, email, password, sitter_checkbox],
         (err, result) => {
             //console.log(err);
-            //console.log("Successful Registration");
-
+            console.log("Successful Registration");
+            console.log(result);
 
         if (result.length > 0) {
             res.send(result);

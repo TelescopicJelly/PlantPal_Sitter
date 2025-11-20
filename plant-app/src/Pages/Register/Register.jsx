@@ -12,6 +12,7 @@ export const Register = () => {
     const [emailReg, setEmailReg ] = useState('');
     const [passReg, setPassReg ] = useState('');
     const [nameReg, setNameReg] = useState('');
+    const [isChecked, setIsChecked] = useState(false);
 
     const [registerStatus, setRegisterStatus] = useState('');
 
@@ -23,10 +24,14 @@ export const Register = () => {
         Axios.post('http://localhost:3001/register', {
             email: emailReg,
             password: passReg,
-            first_name: nameReg, 
+            first_name: nameReg,
+            sitter_checkbox: isChecked,
         }).then((response) => {
             if (response.data.message) {
                 setRegisterStatus(response.data.message);
+                setTimeout(() => {
+                    navigate('/');
+                }, 3000);
             } 
         }).catch(error => {
             setRegisterStatus("An error occurred. Please try again.");
@@ -49,7 +54,11 @@ export const Register = () => {
                 <label htmlFor="password">Password:</label>
                 <input type="password" onChange={(e) => setPassReg(e.target.value)} placeholder="***********" id="password" name="password" ></input>
 
+                <label htmlFor="checkbox">Do you want to register as a sitter?</label>
+                <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(!isChecked)} id="checkbox"></input>
+
                 <button className="register-btn" type="submit"> Sign-Up</button>
+
             </form>
     
             <button className="link-btn" onClick={() => navigate('/login')}> Have an Account? Sign in Here </button>

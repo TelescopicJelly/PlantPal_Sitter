@@ -22,7 +22,9 @@ export const Login = () => {
                 setLoginStatus(response.data.message);
             } else {
                 setLoginStatus(`Welcome, ${response.data[0].email}!`);
-                //navigate('/home'); // Redirect to Home on successful login
+                setTimeout(() => {
+                    navigate('/');
+                }, 3000);
             }
         }).catch(error => {
             setLoginStatus("An error occurred. Please try again.");
