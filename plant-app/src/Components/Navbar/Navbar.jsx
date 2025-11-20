@@ -1,7 +1,7 @@
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
-import Logo from "../../assets/blus_greenhouse.png";
-import Logo_name from "../../assets/logo_name.png";
+import Logo from "../../Copy of Blu’s Greenhouse.png";
+import Logo_name from "../../logo_name.png";
 
 const Navbar = () => {
 
