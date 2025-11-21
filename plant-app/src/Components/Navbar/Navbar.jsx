@@ -10,6 +10,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navContainer">
+                <link rel="stylesheet" href="./Navbar.css"></link>
                 <img src={Logo_name} alt="logo" className="logo_name" />
                 <img src={Logo} alt="logo" className="plants_hanging" />
                 <img src={Logo} alt="logo" className="plants_hanging2" />
