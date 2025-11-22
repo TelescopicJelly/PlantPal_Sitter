@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/PlantPal_Sitter/static/css/main.b8dc1ff1.css",
-    "main.js": "/PlantPal_Sitter/static/js/main.54de7e15.js",
+    "main.js": "/PlantPal_Sitter/static/js/main.792fc1e0.js",
     "static/media/PlantPal_Sitter_Logo.png": "/PlantPal_Sitter/static/media/PlantPal_Sitter_Logo.58d1093d66449464d0f2.png",
     "static/media/Copy of Blu’s Greenhouse.png": "/PlantPal_Sitter/static/media/Copy of Blu’s Greenhouse.8121c8ce1575b7a71d38.png",
     "service-worker.js": "/PlantPal_Sitter/service-worker.js",
     "static/media/logo_name.png": "/PlantPal_Sitter/static/media/logo_name.40ab8f1b8caaa7fc3824.png",
     "index.html": "/PlantPal_Sitter/index.html",
     "main.b8dc1ff1.css.map": "/PlantPal_Sitter/static/css/main.b8dc1ff1.css.map",
-    "main.54de7e15.js.map": "/PlantPal_Sitter/static/js/main.54de7e15.js.map"
+    "main.792fc1e0.js.map": "/PlantPal_Sitter/static/js/main.792fc1e0.js.map"
   },
   "entrypoints": [
     "static/css/main.b8dc1ff1.css",
-    "static/js/main.54de7e15.js"
+    "static/js/main.792fc1e0.js"
   ]
 }
