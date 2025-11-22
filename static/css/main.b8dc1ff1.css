@@ -2,6 +2,10 @@
 
 body{background-color:#043337;}
 
+.Plant_Display2 {
+    translate: 80px, 20px;
+}
+
 .auth-form-container,
 .login-form{display:flex;flex-direction:column}
 .login-form{border:1px solid #f5f5f5;border-radius:10px;margin:.5rem;padding:5rem}
