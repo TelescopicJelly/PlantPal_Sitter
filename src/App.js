@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 import Home from './Pages/Home/Home';
@@ -9,7 +10,7 @@ import Payment from './Pages/Payment/Payment';
 
 function App() {
   return (
-  <Router basename="/PlantPal_Sitter">
+  <Router>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
