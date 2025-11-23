@@ -1,13 +1,14 @@
-import React from 'react'
+//import React from 'react'
 import "./Home.css"
 import Header from '../../Components/Header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling } from '@fortawesome/free-solid-svg-icons'
-import { useNavigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 const Home = () => {
 
-  const navigate = useNavigate();
+  const navigate = HashRouter();
   return (
     <div className="Main_page">
     <div>
@@ -17,7 +18,7 @@ const Home = () => {
                         <div className="headerListItem">
                         <FontAwesomeIcon icon={faSeedling} size="2xl" style={{color: "#669c35",}} />
                         <span>Need a Sitter</span>
-                        <button className='NeedSit_link-btn' onClick={() => navigate('./booking')}> Needing a Sitter </button>
+                        <button className='NeedSit_link-btn' onClick={() => navigate('/booking')}> Needing a Sitter </button>
                 </div>
             </div>
     </div>
