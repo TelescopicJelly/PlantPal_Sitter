@@ -17,7 +17,7 @@ const Home = () => {
                         <div className="headerListItem">
                         <FontAwesomeIcon icon={faSeedling} size="2xl" style={{color: "#669c35",}} />
                         <span>Need a Sitter</span>
-                        <button className='NeedSit_link-btn' onClick={() => navigate('./booking')}> Needing a Sitter </button>
+                        <button className='NeedSit_link-btn' onClick={() => navigate('/booking')}> Needing a Sitter </button>
                 </div>
             </div>
     </div>
