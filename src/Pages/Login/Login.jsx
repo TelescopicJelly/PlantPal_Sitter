@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import Logo from '../PlantPal_Sitter_Logo.png'
+import Logo from '../PlantPalSitterLogo.png'
 
 
 export const Login = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import Logo from '../../Greenhouse.png'; // Make sure image file has no spaces or special chars
