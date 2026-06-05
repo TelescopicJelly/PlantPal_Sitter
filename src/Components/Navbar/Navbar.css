@@ -1,46 +1,38 @@
 .navbar {
-    height: 90px;
-    background-color: 
-    #043337;
-    background-blend-mode: overlay;
+    background-color: #043337;
     display: flex;
-    justify-content: center;
-}
-.plants_hanging {
-    translate: auto;
-}
-
-.plants_hanging2 {
-    translate: auto;
-}
-
-.logo_name {
-    translate: -7rem 28px;
-    height:auto;
-
-}
-.navContainer {
-    width: 100%;
-    max-width: 1024px;
-    color: white;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content:space-between;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
 }
 
-.logo_name {
-    font-weight: 300;
-    font-size: 3.0em;
-    margin-left: 3cm;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.navItems {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
+
+
 
 .navButton {
-    margin-left: 20px;
     border: none;
-    color: #19422a;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 0.7rem;
+    background-color: #B88765;
+    padding: 1em 2em;
+    border-radius: 0.5rem;
     cursor: pointer;
+    color: white;
+    font-size: 1.1rem;
+    width: auto;
+}
+
+
+#logo_name {
+    color: #EFDBBF;
+    font-family: "Alfa Slab One", serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: 2px;
+
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #EFDBBF;
 }

@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className="Main_page">
-      <Header />
+      <Header/>  {/* Allows for the Navbar to display on the Home page */}
       <div className="header">
         <div className="headerListItem">
           <FontAwesomeIcon icon={faSeedling} size="2xl" style={{ color: '#669c35' }} />
